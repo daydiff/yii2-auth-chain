@@ -12,3 +12,14 @@ You have an application - API. You have two roles here:
 
 You need to allow admins to authorize as clients without knowing their passwords just from admin interface. 
 And you need to allow admins to get back to their account without re-logining. And of course you need to log all changes made admins as clients.
+
+## Install
+
+Via git
+
+``` bash
+$ git clone https://github.com/daydiff/yii2-auth-chain
+```
+
+## Usage
+

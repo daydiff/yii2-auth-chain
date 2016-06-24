@@ -1,6 +1,7 @@
 {
     "name": "Daydiff/AuthChain",
     "description": "Yii2 extension implementing authorization chain",
+    "type": "yii2-extension",
     "keywords": [
         "daydiff",
         "yii2",
@@ -14,12 +15,12 @@
     "authors": [
         {
             "name": "Aleksandr Tabakov",
-            "email": "alex.daymon@gmail.com",
-            "role": "Developer"
+            "email": "alex.daymon@gmail.com"
         }
     ],
     "require": {
-        "php" : ">=5.4.0"
+        "php" : ">=5.4.0",
+        "yiisoft/yii2": "*"
     },
     "autoload": {
         "psr-4": {
