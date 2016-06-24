@@ -1,0 +1,29 @@
+{
+    "name": "Daydiff/AuthChain",
+    "description": "Yii2 extension implementing authorization chain",
+    "keywords": [
+        "daydiff",
+        "yii2",
+        "extension",
+        "authorization",
+        "chain",
+        "session"
+    ],
+    "homepage": "https://github.com/daydiff/yii2-auth-chain",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aleksandr Tabakov",
+            "email": "alex.daymon@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Daydiff\\AuthChain\\": "src"
+        }
+    }
+}
