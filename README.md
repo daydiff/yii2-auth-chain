@@ -15,8 +15,6 @@ And you need to allow admins to get back to their account without re-logining. A
 
 ## Install
 
-Via git
-
 ``` bash
 $ composer require daydiff/yii2-auth-chain
 ```
