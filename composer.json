@@ -1,5 +1,5 @@
 {
-    "name": "daydiff/auth-chain",
+    "name": "daydiff/yii2-auth-chain",
     "description": "Yii2 extension implementing authorization chain",
     "type": "yii2-extension",
     "keywords": [
