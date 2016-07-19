@@ -17,9 +17,9 @@ class Service extends Component
 
     /**
      * Adds member to an authorization chain
-     * @param Member $member
+     * @param MemberInterface $member
      */
-    public function add(Member $member)
+    public function add(MemberInterface $member)
     {
         $chain = $this->getChain();
 
@@ -33,7 +33,7 @@ class Service extends Component
 
     /**
      * Returns first member
-     * @return null|Member
+     * @return null|MemberInterface
      */
     public function first()
     {
@@ -49,7 +49,7 @@ class Service extends Component
 
     /**
      * Returns last member
-     * @return null|Member
+     * @return null|MemberInterface
      */
     public function last()
     {
@@ -65,7 +65,7 @@ class Service extends Component
 
     /**
      * Returns the last member and remove it off the chain
-     * @return null|Member
+     * @return null|MemberInterface
      */
     public function pop()
     {
@@ -83,7 +83,7 @@ class Service extends Component
 
     /**
      * Returns all authorization members
-     * @return Member[]
+     * @return MemberInterface[]
      */
     public function all()
     {
