@@ -1,6 +1,6 @@
 # Yii2 extension implementing authorization chain
 
-## What it is for?
+## What is it for?
 
 For applications with hierarhical access roles system.
 
