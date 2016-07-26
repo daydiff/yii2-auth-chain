@@ -7,7 +7,7 @@ namespace Daydiff\AuthChain;
  *
  * @author aleksandr.tabakov
  */
-class MemberInterface
+interface MemberInterface
 {
     /**
      * Returns member's id
