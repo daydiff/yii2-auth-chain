@@ -8,5 +8,8 @@ php:
   - hhvm
   - nightly
 
+before_script:
+  - composer install --prefer-source
+  
 script:
   - vendor/bin/codecept run
