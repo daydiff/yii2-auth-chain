@@ -4,7 +4,6 @@ namespace Daydiff\AuthChain;
 
 use Yii;
 use yii\base\Component;
-use yii\web\Session;
 
 /**
  * Description of Service
@@ -133,7 +132,7 @@ class Service extends Component
             return null;
         }
 
-        $session->get($this->sessionKey, 0);
+        return $session->get($this->sessionKey, 0);
     }
 
     private function setChain($chain)
