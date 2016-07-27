@@ -26,14 +26,14 @@ class ServiceTest extends Test
         /* @var Daydiff\AuthChain\Service $service */
         $service = Yii::createObject(['class' => 'Daydiff\AuthChain\Service', 'sessionKey' => 'test-chain']);
 
-        //add
+        //push
         $this->specify('check adding members', function () use ($service) {
             $member = (new Member())->setId(1)->setLogin('Bob');
-            $service->add($member);
+            $service->push($member);
             expect('count equals', $service->count())->equals(1);
 
             $member = (new Member())->setId(2)->setLogin('Alice');
-            $service->add($member);
+            $service->push($member);
             expect('count equals', $service->count())->equals(2);
         });
 
@@ -54,7 +54,7 @@ class ServiceTest extends Test
         //pop
         $this->specify('check if pop returns last member and take it off the chain', function () use ($service) {
             $member = (new Member())->setId(3)->setLogin('Alex');
-            $service->add($member);
+            $service->push($member);
             $member = $service->pop();
             expect('id equals setted', $member->getId())->equals(3);
             expect('login equals setted', $member->getLogin())->equals('Alex');
