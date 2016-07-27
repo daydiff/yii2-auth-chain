@@ -15,10 +15,10 @@ class Service extends Component
     public $sessionKey;
 
     /**
-     * Adds member to an authorization chain
+     * Pushes the member to an authorization chain
      * @param MemberInterface $member
      */
-    public function add(MemberInterface $member)
+    public function push(MemberInterface $member)
     {
         $chain = $this->getChain();
 
