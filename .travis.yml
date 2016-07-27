@@ -9,7 +9,9 @@ php:
   - nightly
 
 before_script:
+  - composer global require "fxp/composer-asset-plugin:^1.2.0"
   - composer install --prefer-source
   
 script:
+  - vendor/bin/codecept build
   - vendor/bin/codecept run
