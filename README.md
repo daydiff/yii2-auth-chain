@@ -94,7 +94,7 @@ public function actionAuthAs($id)
     $member->setId($user->id)
         ->setLogin($user->login)
         ->setName($user->name);
-    \Yii::$app->authChain->add($member);
+    \Yii::$app->authChain->push($member);
 
     //and then you do authorization work
 }
