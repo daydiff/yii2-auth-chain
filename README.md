@@ -37,13 +37,60 @@ Register application component:
     ]
 ```
 
+You need to declare a member class implementing \Daydiff\AuthChain\MemberInterface
+
+```php
+    //Member.php
+    namespace app\foo\bar;
+
+    class Member implements \Daydiff\AuthChain\MemberInterface
+    {
+        private $id;
+        private $login;
+
+        /**
+         * @inheritdoc
+         */
+        function getId()
+        {
+            return $this->id;
+        }
+
+        /**
+         * @inheritdoc
+         */
+        function getLogin()
+        {
+            return $this->login;
+        }
+
+        /**
+         * @inheritdoc
+         */
+        function setId($id)
+        {
+            $this->id = $id;
+            return $this;
+        }
+
+        /**
+         * @inheritdoc
+         */
+        function setLogin($login)
+        {
+            $this->login = $login;
+            return $this;
+        }
+    }
+```
+
 In your action used to authorize as client:
 
 ``` php
     public function actionAuthAs($id)
     {
         $user = \Yii::$app->getIdentity()->getUser();
-        $member = new Daydiff\AuthChain\Member();
+        $member = new app\foo\bar\Member();
         $member->setId($user->id)
             ->setLogin($user->login)
             ->setName($user->name);
