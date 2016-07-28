@@ -30,79 +30,79 @@ $ composer require daydiff/yii2-auth-chain
 Register application component:
 
 ``` php
-    'components' => [
-        'authChain' => [
-            'class' => 'Daydiff\AuthChain\Service'
-        ],
-    ]
+'components' => [
+    'authChain' => [
+        'class' => 'Daydiff\AuthChain\Service'
+    ],
+]
 ```
 
 You need to declare a member class implementing \Daydiff\AuthChain\MemberInterface
 
 ```php
-    //Member.php
-    namespace app\foo\bar;
+//Member.php
+namespace app\foo\bar;
 
-    class Member implements \Daydiff\AuthChain\MemberInterface
+class Member implements \Daydiff\AuthChain\MemberInterface
+{
+    private $id;
+    private $login;
+
+    /**
+     * @inheritdoc
+     */
+    function getId()
     {
-        private $id;
-        private $login;
-
-        /**
-         * @inheritdoc
-         */
-        function getId()
-        {
-            return $this->id;
-        }
-
-        /**
-         * @inheritdoc
-         */
-        function getLogin()
-        {
-            return $this->login;
-        }
-
-        /**
-         * @inheritdoc
-         */
-        function setId($id)
-        {
-            $this->id = $id;
-            return $this;
-        }
-
-        /**
-         * @inheritdoc
-         */
-        function setLogin($login)
-        {
-            $this->login = $login;
-            return $this;
-        }
+        return $this->id;
     }
+
+    /**
+     * @inheritdoc
+     */
+    function getLogin()
+    {
+        return $this->login;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    function setLogin($login)
+    {
+        $this->login = $login;
+        return $this;
+    }
+}
 ```
 
 In your action used to authorize as client:
 
 ``` php
-    public function actionAuthAs($id)
-    {
-        $user = \Yii::$app->getIdentity()->getUser();
-        $member = new app\foo\bar\Member();
-        $member->setId($user->id)
-            ->setLogin($user->login)
-            ->setName($user->name);
-        \Yii::$app->authChain->add($member);
+public function actionAuthAs($id)
+{
+    $user = \Yii::$app->getIdentity()->getUser();
+    $member = new app\foo\bar\Member();
+    $member->setId($user->id)
+        ->setLogin($user->login)
+        ->setName($user->name);
+    \Yii::$app->authChain->add($member);
 
-        //and then you do authorization work
-    }
+    //and then you do authorization work
+}
 ```
 
 When you need to know who user actually is:
 
 ``` php
-    $member = \Yii::$app->authChain->last();
-    $realUserId = $member->getId();
+$member = \Yii::$app->authChain->last();
+$realUserId = $member->getId();
 ```
