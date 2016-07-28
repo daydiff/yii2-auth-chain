@@ -1,6 +1,6 @@
 # Yii2 extension implementing authorization chain
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/daydiff/yii2-auth-chain.svg?style=flat-square)](https://packagist.org/packages/yii2-auth-chain)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/daydiff/yii2-auth-chain.svg?style=flat-square)](https://packagist.org/packages/daydiff/yii2-auth-chain)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/daydiff/yii2-auth-chain/master.svg?style=flat-square)](https://travis-ci.org/daydiff/yii2-auth-chain)
 
