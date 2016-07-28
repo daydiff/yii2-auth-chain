@@ -92,8 +92,7 @@ public function actionAuthAs($id)
     $user = \Yii::$app->getIdentity()->getUser();
     $member = new app\foo\bar\Member();
     $member->setId($user->id)
-        ->setLogin($user->login)
-        ->setName($user->name);
+        ->setLogin($user->login);
     \Yii::$app->authChain->push($member);
 
     //and then you do authorization work
